@@ -163,6 +163,7 @@ button:focus{
     .about__name{
         max-width: 100%;
         font-size: 34px;
+        margin-bottom: 15px;
     }
     .about__block p{
         font-size: 16px;
@@ -205,4 +206,239 @@ button:focus{
     .about__wrap2{
         padding-top: 40px;
     }
+}
+
+
+
+#contact-map{
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+}
+#contact-map iframe{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.contact__map__block{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-120%);
+    top: 80px;
+    height: 540px;
+    background: #343434;
+    width: 451px;
+    z-index: 2;
+    color: #fff;
+    padding: 56px 50px;
+}
+.contact__map__1{
+    font-family: "Circe-bold";
+    font-size: 32px;
+    line-height: 47px;
+}
+.contact__map__2{
+    font-size: 24px;
+    line-height: 35px;
+    margin-bottom: 39px;
+}
+.contact__map__3{
+    font-size: 20px;
+    line-height: 29px;
+    margin-bottom: 24px;
+}
+.contact__map__block button{
+    padding: 16px;
+    border: 0;
+    font-size: 16px;
+    line-height: 120%;
+    background: #D62631;
+    color: #fff;
+    border-radius: 2px;
+    margin-top: 34px;
+}
+.contact__tabs{
+    padding: 80px 0;
+    .tabs{
+        display: flex;
+        justify-content: space-between;
+    }
+    .tabs__caption{
+        padding: 0;
+        margin: 0;
+    }
+    .tabs__caption li{
+        font-size: 20px;
+        line-height: 29px;
+        padding: 24px 10px;
+        color: #343434;
+        transition: 0.1s all;
+        cursor: pointer;
+        list-style: none;
+        border-bottom: 1px solid #34343421;
+    }
+    .tabs__caption li:last-child{
+        border-bottom: 0;
+    }
+    .tabs__caption li:hover{
+        background: #D62631;
+        color: #fff;
+    }
+    .tabs__caption li.active{
+        background: #D62631;
+        color: #fff;
+    }
+}
+.tabs__content {
+    display: none; /* по умолчанию прячем все блоки */
+}
+.tabs__content.active {
+    display: block; /* по умолчанию показываем нужный блок */
+}
+
+.persona__img{
+    margin-top: 15px;
+    width: 317px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 39px;
+    img{
+        width: 100%;
+        display: block;
+    }
+}
+.persona__img:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 50%;
+    top: 0;
+    right: -35%;
+    bottom: 0;
+    height: 102%;
+    background-color: #fff;
+    transform: skew(-20deg, 0);
+    border-left: 15px solid #E30613;
+}
+.persona__img:before{
+    content: "";
+    display: block;
+    height: 102%;
+    position: absolute;
+    width: 50%;
+    top: 0;
+    left: -34%;
+    bottom: 0;
+    height: 102%;
+    background-color: #fff;
+    transform: skew(-20deg, 0);
+}
+.persona__name{
+    font-family: "Circe-bold";
+    font-size: 24px;
+    line-height: 28px;
+    color: #343434;
+}
+.persona__pos{
+    font-size: 16px;
+    line-height: 20px;
+    color: #343434;
+    opacity: 0.6;
+    margin-bottom: 10px;
+}
+.persona__contact{
+    display: flex;
+    margin-bottom: 39px;
+    a{
+        font-size: 16px;
+        line-height: 24px;
+        color: #343434;
+        text-decoration: none;
+    }
+    a:not(:last-child):after{
+        content: "•";
+        display: inline-block;
+        margin: 0 5px;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+}
+
+.red-btn{
+    color: #fff;
+    padding: 16px;
+    background: #D62631;
+    border-radius: 2px;
+    transition: 0.3s all;
+    font-size: 16px;
+    line-height: 120%;
+    border: 0;
+    cursor: pointer;
+}
+.red-btn:hover{
+    background:#A4282E;
+}
+.contact-town{
+    height: 413px;
+    display: flex;
+}
+.contact-town__map{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 50%;
+    iframe{
+        height: 100%;
+        top: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+.contact-town__left{
+    padding: 64px 56px;
+    width: 50%;
+    background: #F9F9F9;
+}
+
+.contact__structur{
+    padding: 80px 0;
+    padding-top: 0;
+    .tabs__caption{
+        display: flex;
+        li{
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 100%;
+            color: #343434;
+            margin-right: 48px;
+            list-style: none;
+            padding-bottom: 22px;
+            border-bottom: 4px solid transparent;
+            cursor: pointer;
+            transition: 0.1s all;
+            padding-top: 5px;
+        }
+        li:hover{
+            color: #D62631;
+            border-bottom: 4px solid  #D62631;
+        }
+    }
+}
+
+.persona__town{
+    font-family: "Circe-Light";
+    font-size: 20px;
+    line-height: 29px;
+    margin-bottom: 32px;
+    color: #343434;
+    max-width: 400px;
 }
