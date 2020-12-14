@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трансресурс</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/page.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header-nav">
+                <div class="header-nav-left">
+                    <a href="/"><img src="img/logo.svg" alt=""></a>
+                    <ul class="header-nav-left-list">
+                        <li class="multiple">
+                            <a href="#">Каталог деталей</a>
+                            <div class="dropdown-container">
+                                <ul class="dropdown">
+                                    <a href="" class="catalog_link">Каталог</a>
+                                    <li class="dropdown-lvl_1">
+                                        <a href="" class="dropdown-lvl_1-title">Колесные пары</a>
+                                        <ul class="dropdown-lvl_2">
+                                            <li class="dropdown-lvl_2-title"><a href="">НОНК</a></li>
+                                            <li class="dropdown-lvl_2-title"><a href="">СОНК</a></li>
+                                            <li class="dropdown-lvl_2-title"><a href="">НОСК</a></li>
+                                            <li class="dropdown-lvl_2-title"><a href="">Б/у</a></li>
+                                            <li class="dropdown-lvl_2-title"><a href="">Новые</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-lvl_1">
+                                        <a href="" class="dropdown-lvl_1-title">Боковые пары</a>
+                                        <ul class="dropdown-lvl_2">
+                                            <li class="dropdown-lvl_2-title"><a href="">Б/у</a></li>
+                                            <li class="dropdown-lvl_2-title"><a href="">Новые</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-lvl_1">
+                                        <a href="" class="dropdown-lvl_1-title">Надрессорные балки</a>
+                                        <ul class="dropdown-lvl_2">
+                                            <li class="dropdown-lvl_2-title"><a href="">Б/у</a></li>
+                                            <li class="dropdown-lvl_2-title"><a href="">Новые</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-lvl_1">
+                                        <a href="" class="dropdown-lvl_1-title">Поглощающие аппараты</a>
+                                        <a href="" class="dropdown-lvl_1-title">Прочие детали вагона</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#">Услуги</a></li>
+                        <li><a href="#">О компании</a></li>
+                    </ul>
+                </div>
+                <div class="header-search">
+                    <input type="text" placeholder="Введите запрос. Например, НОНК">
+                    
+                </div>
+                <a class="header-search_button" href="">Найти</a>
+                <div class="header-nav-right">
+                    <ul class="header-nav-right-list">
+                        <li><a href="#">О портале</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                    <div class="header-nav-right-icons">
+                        <a href="#" class="icon-cart"></a>
+                        <a class="icon-search"></a>
+                    </div>
+                </div>
+            </nav>
+        </div>        
+    </header>
+
+    <header class="mobile_menu">
+        <nav class="mobile_menu-nav">
+            <div class="mobile_menu-content">
+                <div class="gap"></div>
+                <img src="img/logo.svg" alt="" class="mobile_menu-content-logo">
+                <a href="#" class="icon-cart">
+                    <img src="img/iconCart.svg" alt="">
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+            <div class="open mobile_menu-dropdown">
+                <ul class="mobile_menu-lvl_1  multiple">
+                    <li>
+                        <a href="#" class="mobile_menu-lvl_1-title">Каталог деталей<span class="mobile_menu-arrow"></span></a>
+                        <div class="mobile_menu-lvl_2 multiple">
+                            <a href="#"  class="mobile_menu-lvl_2-title">Колесные пары<span class="mobile_menu-arrow"></span></a>
+                            <ul class="mobile_menu-lvl_3">
+                                <li class="mobile_menu-lvl_3-title"><a href="">НОНК</a></li>
+                                <li class="mobile_menu-lvl_3-title"><a href="">СОНС</a></li>
+                                <li class="mobile_menu-lvl_3-title"><a href="">НОСК</a></li>
+                                <li class="mobile_menu-lvl_3-title"><a href="">БУ</a></li>
+                                <li class="mobile_menu-lvl_3-title"><a href="">Новые</a></li>
+                            </ul>
+                        </div>  
+                    </li>
+                    <li>
+                        <a href="#"  class="mobile_menu-lvl_1-title">Услуги<span class="mobile_menu-arrow"></span></a>
+                        <div class="mobile_menu-lvl_2">
+                            <a href="#"  class="mobile_menu-lvl_2-title">Продажа деталей клиенту</a>
+                        </div>  
+                        <div class="mobile_menu-lvl_2">
+                            <a href="#"  class="mobile_menu-lvl_2-title">Покупка деталей у клиента</a>
+                        </div> 
+                        <div class="mobile_menu-lvl_2">
+                            <a href="#"  class="mobile_menu-lvl_2-title">Трейд-ин деталей</a>
+                        </div> 
+                    </li>
+                    <li>
+                        <a href="#"  class="mobile_menu-lvl_1-title">О нас<span class="mobile_menu-arrow"></span></a>
+                        <div class="mobile_menu-lvl_2">
+                            <a href="#"  class="mobile_menu-lvl_2-title">Партнеры</a>
+                        </div>  
+                        <div class="mobile_menu-lvl_2">
+                            <a href="#"  class="mobile_menu-lvl_2-title">Нормативные документы</a>
+                        </div> 
+                        <div class="mobile_menu-lvl_2">
+                            <a href="#"  class="mobile_menu-lvl_2-title">Новости</a>
+                        </div> 
+                    </li>
+                </ul>   
+                <div class="mobile_menu-portal_contacts">
+                    <a href="">О портале</a>
+                    <a href="">Контакты</a>
+                </div> 
+                <div class="mobile_menu-search">
+                    <input type="text" placeholder="Поиск по сайту">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="">Главная</a></li>
+                <li><a href="">О компании</a></li>
+                <li>Компания «ТрансРесурс»</li>
+            </ul>
+
+            <h1>
+                Компания «ТрансРесурс»  
+            </h1>
+        </div>
+        <section class="about">
+            <div class="about__video video-block active">
+                <video>
+                    <source src="./media/home.mp4">
+                    <source src="./media/home.webm">
+                </video>
+                <button type="button" class="video-block-btn"></button>
+            </div>
+            <div class="about__block">
+                <div class="container">
+                    <div class="about__wrap">
+                        <div class="about__col">
+                            <h2>О компании</h2>
+                            <div class="about__name">Производственно-
+                                логистическая компания</div>
+                        </div>
+                        <div class="about__col">
+                            <p> Общество с ограниченной ответственностью «ТрансРесурс» (ООО «ТрансРесурс») — производственно-логистическая компания, один из ведущих игроков рынка запасных частей грузовых вагонов.</p>
+                            <p>Компания начала свою деятельность в 2015 г., головной офис компании находится в г. Москва, сейчас в компании 8 обособленных структурных подразделений для контроля на местах.</p>
+                        </div>
+                    </div>
+                    <div class="about__wrap2">
+                        <div class="about__wrap2__col">
+                            <div class="about__wrap2__name">256 000</div>
+                            <div class="about__wrap2__red">колесных пар</div>
+                            <div class="about__wrap2__black">колесных пар</div>
+                        </div>
+                        <div class="about__wrap2__col">
+                            <div class="about__wrap2__name">15 000</div>
+                            <div class="about__wrap2__red">вагонов</div>
+                            <div class="about__wrap2__black">колесных пар</div>
+                        </div>
+                        <div class="about__wrap2__col">
+                            <div class="about__wrap2__name">< 150</div>
+                            <div class="about__wrap2__red">млн. руб</div>
+                            <div class="about__wrap2__black">колесных пар</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+
+
+    <footer class="footer">
+        <div class="footer-top container">
+            <div class="footer-list adress_block active">
+                <div class="adress_block-top">
+                    <img src="img/footer-logo.svg" alt="">
+                    <p class="adress_block-top-adress">
+                        Россия, Москва,<br>
+                        пер. Б. Демидовский, д. 12</p>
+                </div>
+                <div class="adress_block-bot">
+                    <a href="#">Контакты</a>
+                    <a href="#">О портале</a>
+                </div>
+            </div>
+
+            <div class="footer-list mobile_dropdown services_block">
+                <p class="footer-list-title">Услуги<span class="footer-list-title-arrow"></span></p>
+                <ul>
+                    <li><a href="#">Продажа деталей клиенту</a></li>
+                    <li><a href="#">Покупка деталей у клиента</a></li>
+                    <li><a href="#">Трейд-ин деталей</a></li>
+                    <li><a href="#">Покупка вагонов (КГМК) у клиента</a></li>
+                    <li><a href="#">Ремонт деталей<br> с обратной доставкой в депо</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-list mobile_dropdown catalog-block">
+                <p class="footer-list-title">Каталог<span class="footer-list-title-arrow"></span></p>
+                <ul>
+                    <li><a href="#">Колесные пары</a></li>
+                    <li><a href="#">Боковые рамы</a></li>
+                    <li><a href="#">Надрессорные балки</a></li>
+                    <li><a href="#">Поглощающие аппараты</a></li>
+                    <li><a href="#">Прочие детали вагона</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-list mobile_dropdown company_block">
+                <p class="footer-list-title">О компании<span class="footer-list-title-arrow"></span></p>
+                <ul>
+                    <li><a href="#">ТрансРесурс</a></li>
+                    <li><a href="#">Партнеры</a></li>
+                    <li><a href="#">Новости</a></li>
+                    <li><a href="#">Нормативные документы</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-list contacts_block">
+                <div class="contacts_block-top">
+                    <div class="numbers">
+                        <a href="tel:+74952520175" class="number">+7 495 252 01 75</a>
+                    </div>
+                    <div class="callback">
+                        <a href="#">Заказать звонок</a>
+                        <a href="#">Обратная связь</a>
+                    </div>
+                </div>
+                <div class="contacts_block-bot">
+                    <a href="#"><img src="img/fb-icon.svg" alt=""></a>
+                    <a href="#"><img src="img/vk-icon.svg" alt=""></a>
+                    <a href="#"><img src="img/yt-icon.svg" alt=""></a>
+                </div>
+                <div class="callback_mobile">
+                    <a href="#">Заказать звонок</a>
+                    <a href="#">Обратная связь</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bot container">
+            <p class="footer-copyright">&#169; 2020 «ТрансРесурс»</p>
+            <div class="footer-politics">
+                <ul>
+                    <li><a href="#">Правила использования cookie</a></li>
+                    <li><a href="#">Пользовательское соглашение</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Публичная оферта</a></li>
+                    <li><a href="#">Карта сайта</a></li>
+                </ul>
+                <p class="copyright">&#169; 2020 «ТрансРесурс»</p>
+                <p class="developer">Разработка сайта — ITECH</p>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+</html>
+
+
+<script>
+    $(document).ready(function(){
+        const $mobileFooterDropdowns = $('.footer .mobile_dropdown');
+        $.each($mobileFooterDropdowns, function(index, dropdown){
+            arrow = $(dropdown).find('.footer-list-title-arrow');
+            arrow.click(function(){
+                list = $(dropdown).find('ul');
+                if ($(list).css('display')=="none") {
+                    $(list).css('display', 'block')
+                    $(this).css('transform', 'rotate(180deg)')
+                } else {
+                    $(list).css('display', 'none')
+                    $(this).css('transform', 'rotate(0deg)')
+                }
+            });
+        });
+
+        $('.menu-toggle').on('click',function() {
+            $('.mobile_menu-dropdown').slideToggle();
+            $(this).toggleClass('open');
+        });
+
+    });
+    
+</script>
+
+<script>
+    $(document).ready(function(){
+        const $mobileHeaderDropdownsLvl1 = $('.mobile_menu-lvl_1 >li');
+        $.each($mobileHeaderDropdownsLvl1, function(index, dropdown){
+            arrow = $(dropdown).find('.mobile_menu-lvl_1-title .mobile_menu-arrow');
+            arrow.click(function(){
+                list = $(dropdown).find('.mobile_menu-lvl_2');
+                if ($(list).css('display')=="none") {
+                    $(list).css('display', 'block')
+                    $(this).css('transform', 'rotate(180deg)')
+                } else {
+                    $(list).css('display', 'none')
+                    $(this).css('transform', 'rotate(0deg)')
+                }
+            });
+
+            $mobileHeaderDropdownsLvl2 = $(dropdown).find('.mobile_menu-lvl_2');
+            $.each($mobileHeaderDropdownsLvl2, function(index, dropdown2){
+                arrow2 = $(dropdown2).find('.mobile_menu-lvl_2-title .mobile_menu-arrow');
+                arrow2.click(function(){
+                    list2 = $(dropdown2).find('.mobile_menu-lvl_3');
+                if ($(list2).css('display')=="none") {
+                    $(list2).css('display', 'block')
+                    $(this).css('transform', 'rotate(180deg)')
+                } else {
+                    $(list2).css('display', 'none')
+                    $(this).css('transform', 'rotate(0deg)')
+                }
+                });
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        const iconSearch = $('.header-nav-right-icons .icon-search');
+        const headerNavLeftList = $('.header-nav-left-list');
+        const HeaderNavRightList = $('.header-nav-right-list');
+        const iconCart = $('.header-nav-right-icons .icon-cart');
+        const headerSearch = $('.header-search');
+        const headerSearchButton = $('.header-search_button');
+        iconSearch.click(function(){
+            if (!iconSearch.hasClass('open')){
+                iconSearch.css('background', 'url(img/iconSearchClose.svg) no-repeat center')
+                headerNavLeftList.fadeOut(200,'linear');
+                HeaderNavRightList.fadeOut(200,'linear');
+                iconCart.fadeOut(200,'linear');
+                setTimeout(() => {
+                    headerSearchButton.css("display", "flex").hide().fadeIn()
+                }, 1000);
+                headerSearch.addClass('active');
+                iconSearch.addClass('open');
+                headerSearch.find('input').focus();
+            } else {
+                setTimeout(() => {
+                    headerNavLeftList.fadeIn(200,'linear');
+                    HeaderNavRightList.fadeIn(200,'linear');
+                    iconCart.fadeIn(200,'linear');
+                }, 1000);
+                iconSearch.css('background', 'url(img/iconSearch.svg) no-repeat center')
+                headerSearch.removeClass('active');
+                headerSearchButton.fadeOut()
+                iconSearch.removeClass('open');
+            }
+        });
+    });
+</script>

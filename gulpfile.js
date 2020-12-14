@@ -20,7 +20,8 @@ var path = {
         css: 'build/css/',
         img: 'build/img/',
         fonts: 'build/fonts/',
-        libs: 'build/libs/'
+        libs: 'build/libs/',
+        media: 'build/media/'
     },
     src: {
         html: 'src/*.html',
@@ -28,7 +29,8 @@ var path = {
         style: 'src/style/*.scss',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*',
-        libs: 'src/libs/**/*.*'
+        libs: 'src/libs/**/*.*',
+        media: 'src/media/**/*.*'
     },
     watch: {
         html: 'src/**/*.html',
@@ -145,6 +147,11 @@ gulp.task('libs:build', function () {
     return gulp.src(path.src.libs)
         .pipe(gulp.dest(path.build.libs));
 });
+// перенос media
+gulp.task('media:build', function () {
+    return gulp.src(path.src.media)
+        .pipe(gulp.dest(path.build.media));
+});
 
 // удаление каталога build 
 gulp.task('clean:build', function () {
@@ -166,7 +173,8 @@ gulp.task('build',
             'js:build',
             'fonts:build',
             'image:build',
-            'libs:build'
+            'libs:build',
+            'media:build'
         )
     )
 );
@@ -179,6 +187,7 @@ gulp.task('watch', function () {
     gulp.watch(path.watch.img, gulp.series('image:build'));
     gulp.watch(path.watch.fonts, gulp.series('fonts:build'));
     gulp.watch(path.watch.fonts, gulp.series('libs:build'));
+    gulp.watch(path.watch.fonts, gulp.series('media:build'));
     gulp.watch(path.watch.css_build).on('change', webserver.reload);
     gulp.watch(path.watch.js_build).on('change', webserver.reload);
 });

@@ -1,18 +1,14 @@
 $(function(){
-    // поиск
-    $('.search').on('click', function(){
-        $(this).addClass('active')
-    })
-
-    $(document).mouseup(function (e){ // событие клика по веб-документу
-		var div = $(".search"); // тут указываем ID элемента
-		if (!div.is(e.target) // если клик был не по нашему блоку
-		    && div.has(e.target).length === 0) { // и не по его дочерним элементам
-                div.removeClass('active')
-		}
+    let video = $('.video-block video')
+    video.on('ended',function(){
+        $(this).closest('.video-block').addClass('active')
     });
-    
-    $('.search.active img').on('click', function(){
-        // поиск когда кликаешь на картинку поиска
+
+    $('.video-block-btn').on('click', function(){ 
+        $(this).closest('.video-block').removeClass('active')
+        let thisVideo = $(this).closest('.video-block').find('video')
+        thisVideo.currentTime = 0;
+        thisVideo.trigger('play');
+         console.log('123')
     })
 })
