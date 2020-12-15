@@ -2136,12 +2136,14 @@ h1 {
     -ms-flex-order: 2;
     order: 2; } }
 
+@media (max-width: 559px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important; } }
+
 @media (max-width: 376px) {
   h1 {
     font-size: 44px; }
-  .container {
-    padding-left: 16px !important;
-    padding-right: 16px !important; }
   .home-video .container {
     padding: 0 32px !important; }
   .home-video-descr {
