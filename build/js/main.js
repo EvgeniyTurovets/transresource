@@ -20,4 +20,13 @@ $(function(){
         .addClass('active').siblings().removeClass('active')
         .closest('div.tabs').find('div.tabs__content').hide().removeClass('active').eq($(this).index()).fadeIn().addClass('active');
     });
+
+    $('.contact__tabs  ul.tabs__caption').on('click', 'li:not(.active)', function() {
+        if($(window).width() < 1024){
+            $('html, body').animate({
+                scrollTop: $(this).closest('div.tabs').find('div.tabs__content').eq($(this).index()).offset().top // класс объекта к которому приезжаем
+            }, 500); // Скорость прокрутки
+           
+        }
+    });
 })
