@@ -429,7 +429,8 @@ button:focus {
 
 .footer-form__pdf {
   width: 50%;
-  position: relative; }
+  position: relative;
+  background-size: cover; }
 
 .footer-form__pdf__btn {
   position: absolute;
@@ -526,6 +527,14 @@ button:focus {
   /* white */
   color: #FFFFFF; }
 
+.footer__right__bot__wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: start;
+      align-items: flex-start; }
+
 @media (max-width: 1410px) {
   .contact__structur .tabs__caption li {
     margin-bottom: 10px; } }
@@ -558,7 +567,20 @@ button:focus {
     line-height: 22px;
     padding: 15px 10px; }
   .contact__tabs .tabs__caption {
-    margin-bottom: 25px; } }
+    margin-bottom: 25px; }
+  .footer-form {
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    height: auto;
+    -ms-flex-align: center;
+        align-items: center; }
+  .footer-form__pdf {
+    width: 469px;
+    height: 424px;
+    max-width: 100%; }
+  .footer-form__right {
+    width: 469px;
+    max-width: 100%; } }
 
 @media (max-width: 767px) {
   .contact__structur .tabs__caption li {
@@ -598,7 +620,8 @@ button:focus {
   .persona__name {
     font-size: 18px; }
   .red-btn {
-    font-size: 14px; }
+    font-size: 14px;
+    padding: 13px; }
   .persona__contact a {
     font-size: 14px;
     line-height: 22px; }
@@ -606,9 +629,41 @@ button:focus {
     max-width: 100%;
     margin-bottom: 25px; }
   .persona__contact {
-    margin-bottom: 25px; } }
+    margin-bottom: 25px; }
+  .footer-form__right1 {
+    font-size: 26px; }
+  .footer-form__right2 {
+    font-size: 18px; }
+  .footer__right__bot__wrap a {
+    font-size: 18px;
+    line-height: 1.3; }
+  .footer__right__bot__wrap .footer__right__bot__phone {
+    font-size: 26px;
+    line-height: 1.3; }
+  .footer__right__bot a {
+    font-size: 16px; } }
 
 @media (max-width: 559px) {
   .contact-town__left {
     padding: 30px;
-    margin-top: 25px; } }
+    margin-top: 25px; }
+  .footer__right__bot {
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    -ms-flex-align: start;
+        align-items: flex-start; }
+  .footer-form__right {
+    padding: 30px 20px; }
+  .footer-form__pdf {
+    height: 300px; }
+  .footer-form__text {
+    bottom: 20px;
+    left: 20px; } }
+
+.page-text {
+  font-size: 24px;
+  line-height: 140%;
+  color: #343434;
+  max-width: 863px; }
