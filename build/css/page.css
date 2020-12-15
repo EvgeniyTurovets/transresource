@@ -423,9 +423,14 @@ button:focus {
   max-width: 400px; }
 
 .footer-form {
-  height: 419px;
+  height: 495px;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  padding-top: 80px; }
+
+@media (max-width: 767px) {
+  .footer-form {
+    padding-top: 30px; } }
 
 .footer-form__pdf {
   width: 50%;
@@ -583,6 +588,8 @@ button:focus {
     max-width: 100%; } }
 
 @media (max-width: 767px) {
+  .contact__structur {
+    padding: 30px 0; }
   .contact__structur .tabs__caption li {
     margin-bottom: 0px;
     white-space: nowrap;
