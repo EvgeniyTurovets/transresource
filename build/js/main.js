@@ -29,4 +29,14 @@ $(function(){
            
         }
     });
+
+
+    $('#modal-back').on('submit', function(){
+        $.fancybox.close()
+        $.fancybox.open({
+            src: '#modal-back2', 
+            modal: true
+        });
+        return false;
+    })
 })

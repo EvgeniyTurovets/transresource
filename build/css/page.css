@@ -491,7 +491,7 @@ button:focus {
   margin-bottom: 40px; }
 
 .footer-form__right .red-btn {
-  margin-bottom: 69px; }
+  margin-bottom: 65px; }
 
 .footer__right__bot {
   display: -ms-flexbox;
@@ -669,7 +669,7 @@ button:focus {
     bottom: 20px;
     left: 20px; }
   .footer-form {
-    margin: 0 -20px;
+    margin: 0 -16px;
     margin-bottom: -30px; } }
 
 .page-text {
@@ -791,3 +791,77 @@ button:focus {
 @media (max-width: 559px) {
   .partners__item {
     padding: 20px 15px; } }
+
+.my-modal {
+  width: 400px;
+  max-width: 100%;
+  padding: 25px;
+  padding-bottom: 30px;
+  position: relative; }
+
+.input {
+  margin-bottom: 15px; }
+  .input label {
+    font-size: 14px;
+    line-height: 22px;
+    color: #343434;
+    display: block;
+    font-family: 'Circe-light'; }
+  .input input {
+    width: 100%;
+    padding: 15px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #343434;
+    font-size: 16px;
+    color: #343434; }
+  .input input::-webkit-input-placeholder {
+    color: #c9c9c9;
+    font-family: 'Circe-light'; }
+  .input input:-ms-input-placeholder {
+    color: #c9c9c9;
+    font-family: 'Circe-light'; }
+  .input input::-ms-input-placeholder {
+    color: #c9c9c9;
+    font-family: 'Circe-light'; }
+  .input input::placeholder {
+    color: #c9c9c9;
+    font-family: 'Circe-light'; }
+  .input input:focus {
+    outline: none; }
+
+.my-modal-top {
+  height: 90px;
+  background: #343434;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Circe-bold';
+  margin: 0 -25px;
+  margin-top: -25px;
+  font-size: 32px;
+  line-height: 100%;
+  color: #FFFFFF;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0 16px;
+  margin-bottom: 20px; }
+
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  cursor: pointer; }
+
+.my-modal-submite {
+  margin-top: 20px; }
+
+.my-modal-submite button {
+  width: 100%; }
+
+@media (max-width: 767px) {
+  .my-modal-top {
+    font-size: 28px;
+    height: 75px; }
+  .modal-close {
+    top: 23px; } }
