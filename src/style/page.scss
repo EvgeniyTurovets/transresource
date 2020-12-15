@@ -856,4 +856,10 @@ button:focus{
     .partners__text{
         height: auto;
     }
+    
+}
+@media(max-width: 559px){
+    .partners__item {
+        padding: 20px 15px;
+    }
 }
