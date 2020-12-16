@@ -153,11 +153,62 @@
         <section class="service">
             <div class="container">
                 <div class="service1">
-                    <div class="service__col">
-                        <div class="service1__left"></div>
+                    <div class="service1__col">
+                        <div class="service1__left">
+                            Компания «ТрансРесурс» осуществляет выкуп невостребованных деталей у клиентов.
+                        </div>
                     </div>
-                    <div class="service__col">
-                        <div class="service__right"></div>
+                    <div class="service1__col">
+                        <div class="service__right">
+                            <div class="service__right__text">Благодаря развитой логистической сети мы можем у вас выкупить как несколько единичных деталей, так и большую партию.</div>
+                            <p>В каких случаях продажа ремонтопригодных деталей выгодна для клиентов:</p>
+                            <ul>
+                                <li>доставка деталей в другое депо или их ремонт экономически нецелесообразны</li>
+                                <li>длительное хранение деталей в депо дороже стоимости деталей</li>
+                                <li>изменились маршруты перевозок и в данном депо нет необходимости хранить оборотный запас;</li>
+                                <li>технические характеристики деталей не подходят для ремонта вагонов</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service2">
+                    <div class="persona">
+                        <div class="persona__img" >
+                              <img src="./img/contact/persona.jpg">
+                        </div>
+                        <div class="persona__name">Мельников Александр Васильевич</div>
+                        <div class="persona__pos">Руководитель отдела закупки запасных частей</div>
+                        <div class="persona__contact">
+                            <a href="">7 495 252 07 75 </a>
+                            <a href="">doc@trans-res.ru</a>
+                        </div>
+                    </div>
+                    <div class="service2__wrap">
+                        <p>Более подробная информация об услуге, а также возможность оформить заявку будут представлены на Портале в ближайшее время.</p>
+                        <p>Для оформления заявки вы можете обратиться к ответственному за направление, заказать звонок или заполнить форму «Обратная связь»</p>
+                        <div class="service2__link">
+                            <button class="red-btn" data-fancybox="" data-src="#modal-vopros" data-modal="true">Заказать звонок</button>
+                            <button class="red-btn2" data-fancybox="" data-src="#modal-vopros" data-modal="true">Обратная связь</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service3 service3__fon" style="background-image: url('./img/service/bg.png');">
+                    <div class="service3__col ">
+                        <div class="service3__name">Компания «ТрансРесурс» оказывает разнообразные услуги в сфере поставки деталей</div>
+                    </div>
+                    <div class="service3__col">
+                        <ul class="home-services-list">
+                            <li><a href="">Продажа деталей клиенту</a></li>
+                            <li><a href="">Покупка ремонтопригодных деталей</a></li>
+                            <li><a href="">Tрейд-ин деталей</a></li>
+                            <li><a href="">Покупка неремонтопригодных деталей и металлолома</a></li>
+                            <li><a href="">Покупка вагонов с истекшим сроком службы (КГМК)</a></li>
+                            <li><a href="">Перевозка деталей из одного депо в другое</a></li>
+                            <li><a href="">Ремонт деталей с доставкой до депо хранения</a></li>
+                            <li><a href="">Расследование, подготовка претензий и исков по вагонам</a></li>
+                        </ul>
                     </div>
                 </div>
 
@@ -288,7 +339,28 @@
             <button class="red-btn">Отправить</button>
         </div>
     </form>
-    <!-- модалки -->
+
+    <form id="modal-vopros" class="my-modal" style="display: none;">
+        <div class="my-modal-top">Задать вопрос</div>
+        <div class="modal-close" data-fancybox-close><img src="./img/modal-close.svg"></div>
+        <div class="input">
+            <label for="">Имя</label>
+            <input type="text" placeholder="Введите ваше имя">
+        </div>
+        <div class="input">
+            <label for="">Телефон</label>
+            <input type="phone" placeholder="Введите ваш телефон">
+        </div>
+        <div class="input">
+            <label for="">Вопрос</label>
+            <textarea placeholder="Введите ваш вопрос"></textarea>
+        </div>
+
+        <div class="my-modal-submite">
+            <button class="red-btn">Отправить</button>
+        </div>
+    </form>
+    
     <div id="modal-back2" class="my-modal" style="display: none;">
         <div class="my-modal-top" style="height: 75px;"></div>
         <div class="modal-close" data-fancybox-close style="top: 23px"><img src="./img/modal-close.svg"></div>
