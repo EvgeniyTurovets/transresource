@@ -1672,3 +1672,78 @@ button:focus {
     max-width: 280px; }
   .u-action button {
     margin-top: 20px; } }
+
+@media (max-width: 559px) {
+  .uznay {
+    margin: 0 -16px; }
+  .uznay__col {
+    padding: 40px 15px; } }
+
+.notfound {
+  display: -ms-flexbox;
+  display: flex;
+  height: 428px;
+  background-color: #EFF2F9; }
+  .notfound h2 {
+    margin-bottom: 16px; }
+  .notfound p {
+    max-width: 415px;
+    margin-bottom: 32px; }
+  .notfound a {
+    display: inline-block;
+    color: #D62631;
+    text-decoration: none; }
+  .notfound a:hover {
+    color: #A4282E; }
+  .notfound .u-input {
+    max-width: 416px;
+    position: relative; }
+    .notfound .u-input button {
+      position: absolute;
+      background-color: transparent;
+      border: 0;
+      top: 50%;
+      padding: 5px;
+      cursor: pointer;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      right: 15px; }
+      .notfound .u-input button svg {
+        width: 20px; }
+        .notfound .u-input button svg path {
+          fill: #343434; }
+
+.notfound__col {
+  width: 50%;
+  background-size: 575px 406px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 72px 40px;
+  padding-bottom: 72px; }
+
+@media (max-width: 1199px) {
+  .notfound__col {
+    background-size: contain; } }
+
+@media (max-width: 1023px) {
+  .notfound {
+    height: auto; } }
+
+@media (max-width: 767px) {
+  .notfound {
+    -ms-flex-direction: column;
+        flex-direction: column; }
+  .notfound__col {
+    width: 100%;
+    padding: 25px; }
+  .notfound__col--fon {
+    padding-bottom: 50%; } }
+
+@media (max-width: 559px) {
+  .notfound {
+    margin: 0 -16px;
+    padding-bottom: 25px; }
+  .notfound__col {
+    padding: 25px 16px; }
+  .notfound__col--fon {
+    padding-bottom: 50%; } }

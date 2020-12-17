@@ -58,24 +58,26 @@ $(function(){
         return false;
     })
 
-
-    $('.big-slider').slick({
-        arrows: false,
-        asNavFor: '.nav-slider',
-    })
-
-    $('.nav-slider').slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        asNavFor: '.big-slider',
-        focusOnSelect: true,
-        variableWidth: true,
-    })
-
-    $('.big-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-       
-        video.closest('.video-block').addClass('active')
-        video.trigger('pause');
-        
-    });
+    if($('.big-slider').legth){
+        $('.big-slider').slick({
+            arrows: false,
+            asNavFor: '.nav-slider',
+        })
+    
+        $('.nav-slider').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            asNavFor: '.big-slider',
+            focusOnSelect: true,
+            variableWidth: true,
+        })
+    
+        $('.big-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+           
+            video.closest('.video-block').addClass('active')
+            video.trigger('pause');
+            
+        });
+    }
+    
 })
