@@ -2042,9 +2042,46 @@ button:focus {
     -ms-flex: auto;
         flex: auto; }
   .portal3 .tabs__caption li:last-child {
-    margin-bottom: 0; } }
+    margin-bottom: 0; }
+  .portal2 {
+    padding: 80px 0; }
+  .portal3 .tabs__caption li {
+    font-size: 18px; }
+  .portal3 .tabs__content ul li {
+    font-size: 14px; } }
 
 @media (max-width: 559px) {
+  .portal1 {
+    margin: 0 -16px; }
   .portal3 .footer__right__bot__wrap {
     -ms-flex-direction: column-reverse;
-        flex-direction: column-reverse; } }
+        flex-direction: column-reverse; }
+  .portal3 .footer__right__bot__wrap a.red-btn {
+    margin-left: 0;
+    margin-bottom: 50px; }
+  .portal3 .footer__right__bot__wrap {
+    -ms-flex-align: start;
+        align-items: flex-start; }
+  .footer__right__bot__wrap a {
+    -ms-flex-align: start;
+        align-items: flex-start;
+    line-height: 1.5; }
+  .portal3 .footer-form__right {
+    padding: 30px 16px; }
+  .portal3 {
+    margin: 0 -16px;
+    margin-bottom: -30px; }
+    .portal3 h2 {
+      padding-left: 16px; }
+  .portal3 .tabs__caption {
+    padding: 25px 16px; }
+  .portal3 .tabs__content {
+    padding: 25px 16px; }
+  .portal3 .footer-form__right {
+    background-size: 1000px;
+    background-position: top center;
+    background-repeat: repeat-y; }
+  .portal2 {
+    margin: 0 -16px; }
+    .portal2 h2 {
+      padding-left: 16px; } }
