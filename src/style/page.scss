@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+.header-nav-left-list {
+    padding-left: 48px;
+}
 .breadcrumb{
     display: flex;
     padding-left: 0;
@@ -2158,5 +2161,183 @@ button:focus{
 @media(max-width: 374px){
     .portal2__item{
         padding: 15px;
+    }
+}
+
+
+.portal3{
+    margin-bottom: 32px;
+    .tabs{
+        display: flex;
+        min-height: 375px;
+    }
+    .tabs__caption{
+        flex: 0 0 416px;
+        background: #61636D;
+        padding: 61px 64px;
+        li{
+            font-size: 24px;
+            line-height: 100%;
+            color: #FFFFFF;
+            list-style: none;
+            margin-bottom: 24px;
+            font-family: 'Circe-Bold';
+            cursor: pointer;
+        }
+        li:after{
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 8px;
+            background-image: url('../img/portal/v.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-left: 5px;
+            transition: 0.3s all;
+            margin-bottom: 1px;
+        }
+        li.active:after{
+            display: none;
+            
+        }
+        li.active{
+            font-family: 'Circe-Regular';
+        }
+        li:hover:after{
+            transform: translateX(5px);
+        }
+    }
+
+    .tabs__content{
+        flex: 1;
+        padding: 56px 80px;
+        background: #F9F9F9;
+        ul{
+            padding-left: 25px;
+        }
+        ul li{
+            font-size: 16px;
+            line-height: 140%;
+            color: #343434;
+            list-style: none;
+            position: relative;
+            margin-bottom: 16px;
+        }
+        ul li::before{
+            width: 8px;
+            height: 10px;
+            content: '';
+            display: block;
+            position: absolute;
+            left: -22px;
+            top: 6px;
+            background: url('../img/partnerIconTriangle.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .footer-form__right{
+        width: 100%;
+        background-image: url('../img/portal/bot-fon.png');
+        background-size: 1271px 153px;
+        display: flex;
+        justify-content: space-between;
+        padding:40px 64px;
+    }
+    .footer__right__bot__wrap{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    .footer__right__bot__wrap a{
+        line-height: 1;
+    }
+    .footer__right__bot__wrap a.red-btn{
+        align-items: flex-start;
+        font-size: 16px;
+        line-height: 120%;
+    }
+    .footer-form__right .red-btn{
+        margin-bottom: 6px;
+        margin-left: 56px;
+    }
+    .footer-form__right2{
+        margin-bottom: 0;
+        font-size: 20px;
+        line-height: 29px;
+    }
+    .footer__right__bot__wrap .footer__right__bot__phone{
+        line-height: 1;
+    }
+}
+
+
+@media(max-width: 1023px){
+    .portal3 .tabs__caption{
+        flex: 0 0 296px;
+        background: #61636D;
+        padding: 45px 25px;
+    }
+
+    .portal3 .tabs__content {
+        padding: 45px 25px;
+        background: #F9F9F9;
+    }
+    .portal3 .footer-form__right{
+        padding: 30px 25px;
+    }
+    .footer__right__bot__wrap .footer__right__bot__phone{
+        font-size: 24px;
+    }
+    .footer__right__bot__wrap a{
+        font-size: 18px;
+    }
+    .portal3 .footer-form__right .red-btn{
+        margin-left: 15px;
+        margin-bottom: 0px;
+    }
+    .footer-form__right1{
+        max-width: 291px;
+        font-size: 28px;
+    }
+    .portal3 .footer-form__right2{
+        font-size: 16px;
+        line-height: 1;
+    }
+    .portal3 .footer__right__bot__wrap{
+        align-items: center;
+    }
+    .portal3 .footer-form__right{
+        background-size: cover;
+    }
+}
+
+@media(max-width: 767px){
+    .portal3 .footer-form__right{
+        flex-direction: column;
+    }
+    .footer-form__right__top{
+        margin-bottom: 50px;
+    }
+    .footer__right__bot{
+        justify-content: flex-end;
+    }
+    .portal3 .tabs{
+        flex-direction: column;
+        min-height: auto;
+    }
+    .portal3 .tabs__caption{
+        flex:auto;
+    }
+    .portal3 .tabs__caption li:last-child{
+        margin-bottom: 0;
+    }
+}
+
+@media(max-width: 559px){
+    .portal3 .footer__right__bot__wrap{
+        flex-direction: column-reverse;
     }
 }
