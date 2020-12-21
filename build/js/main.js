@@ -79,5 +79,11 @@ $(function(){
             
         });
     }
+
+    $('.contact__map__block button').on('click', function(){
+        $('html, body').animate({
+            scrollTop: $('.contact__structur').offset().top // класс объекта к которому приезжаем
+        }, 500); // Скорость прокрутки
+    })
     
 })
