@@ -58,7 +58,7 @@ $(function(){
         return false;
     })
 
-    if($('.big-slider').legth){
+    if($('.big-slider').length){
         $('.big-slider').slick({
             arrows: false,
             asNavFor: '.nav-slider',
