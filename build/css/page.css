@@ -1929,9 +1929,9 @@ button:focus {
       color: #FFFFFF;
       list-style: none;
       margin-bottom: 24px;
-      font-family: 'Circe-Bold';
+      font-family: 'Circe-Regular';
       cursor: pointer; }
-    .portal3 .tabs__caption li:after {
+    .portal3 .tabs__caption li.active:after {
       content: "";
       display: inline-block;
       width: 10px;
@@ -1943,13 +1943,8 @@ button:focus {
       margin-left: 5px;
       transition: 0.3s all;
       margin-bottom: 1px; }
-    .portal3 .tabs__caption li.active:after {
-      display: none; }
     .portal3 .tabs__caption li.active {
-      font-family: 'Circe-Regular'; }
-    .portal3 .tabs__caption li:hover:after {
-      -webkit-transform: translateX(5px);
-              transform: translateX(5px); }
+      font-family: 'Circe-Bold'; }
   .portal3 .tabs__content {
     -ms-flex: 1;
         flex: 1;

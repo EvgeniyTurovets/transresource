@@ -2200,10 +2200,10 @@ button:focus{
             color: #FFFFFF;
             list-style: none;
             margin-bottom: 24px;
-            font-family: 'Circe-Bold';
+            font-family: 'Circe-Regular';
             cursor: pointer;
         }
-        li:after{
+        li.active:after{
             content: "";
             display: inline-block;
             width: 10px;
@@ -2216,15 +2216,8 @@ button:focus{
             transition: 0.3s all;
             margin-bottom: 1px;
         }
-        li.active:after{
-            display: none;
-            
-        }
         li.active{
-            font-family: 'Circe-Regular';
-        }
-        li:hover:after{
-            transform: translateX(5px);
+            font-family: 'Circe-Bold';
         }
     }
 
