@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Трансресурс</title>
-    <link rel="stylesheet" href="./css/style.css?v=810c758db70e0f099e0f5f4e3965892f">
-    <link rel="stylesheet" href="./libs/fancybox/fancybox.min.css?v=810c758db70e0f099e0f5f4e3965892f">
-    <link rel="stylesheet" href="./css/page.css?v=810c758db70e0f099e0f5f4e3965892f">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?v=810c758db70e0f099e0f5f4e3965892f"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./libs/fancybox/fancybox.min.css">
+    <link rel="stylesheet" href="./css/page.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- api яндекса -->
+    <script type="text/javascript" src="https://api-maps.yandex.ru/2.1-dev/?lang=ru_RU"></script>
+
 </head>
 <body>
     <header class="header">
@@ -151,7 +155,86 @@
         </div>
         <section class="contact">
             <div id="contact-map">
-                <iframe src="https://yandex.ru/map-widget/v1/-/CCUE6YhJDC" width="100" height="100" frameborder="1" allowfullscreen="true" ></iframe>
+                <div id="ymap_ctrl_display" style="display: none; width: 100%; height: 100%; position: absolute; background-color: rgba(0, 0, 0, 0.5); z-index: 100; pointer-events: none;">
+
+                    <div style="position: relative; top: 50%; left: 0; right: 0; color: white; text-align: center; font-size: 1.8em; pointer-events: none;">Чтобы изменить масштаб, прокручивайте карту, удерживая клавишу Ctrl.</div>
+                </div>
+                <div id="map"></div>
+                <script>
+                    var myMap;
+                    
+                    // Дождёмся загрузки API и готовности DOM.
+                    ymaps.ready(init);
+                    
+                    function init () {
+                    
+                                var center = [55.77227434, 37.63092426];
+                    
+                                var myMap = new ymaps.Map('map', {
+                                    center: center,
+                                    zoom: 17,
+                                    type: 'yandex#map',
+                                    controls: ['fullscreenControl']
+                                });
+                                myMap.behaviors.disable('scrollZoom');
+                                myMap.controls.add('fullscreenControl',{float: 'left'});
+                                // Создаем геообъект с типом геометрии "Точка".
+                                myGeoObject = new ymaps.GeoObject();
+                                myMap.geoObjects
+                                .add(new ymaps.Placemark([55.77101400, 37.63209300], {
+                                    balloonContent: 'Ул. Уличная,д. 22'
+                                }, {
+                                    // Опции.
+                                        // Необходимо указать данный тип макета.
+                                        iconLayout: 'default#image',
+                                        // Своё изображение иконки метки.
+                                        iconImageHref: '/img/contact/label.png',
+                                        // Размеры метки.
+                                        iconImageSize: [49,64],
+                                        // Смещение левого верхнего угла иконки относительно
+                                        // её "ножки" (точки привязки).
+                                        iconImageOffset: [-80, -254]
+                                }));
+                    var ctrlKey = false;
+                    var ctrlMessVisible = false;
+                    var timer;
+                   
+                    // Отслеживаем скролл мыши на карте, чтобы показывать уведомление
+                    myMap.events.add(['wheel', 'mousedown'], function(e) {
+                        if (e.get('type') == 'wheel') {
+                            if (!ctrlKey) { // Ctrl не нажат, показываем уведомление
+                                $('#ymap_ctrl_display').fadeIn(300);
+                                ctrlMessVisible = true;
+                                clearTimeout(timer); // Очищаем таймер, чтобы продолжать показывать уведомление
+                                timer = setTimeout(function() {
+                                    $('#ymap_ctrl_display').fadeOut(300);
+                                    ctrlMessVisible = false;
+                                }, 1500);
+                            }
+                            else { // Ctrl нажат, скрываем сообщение
+                                $('#ymap_ctrl_display').fadeOut(100);
+                            }
+                        }
+                        if (e.get('type') == 'mousedown' && ctrlMessVisible) { // Скрываем уведомление при клике на карте
+                            $('#ymap_ctrl_display').fadeOut(100);
+                        }
+                    });
+                    
+                    // Обрабатываем нажатие на Ctrl
+                    $(document).keydown(function(e) {
+                        if (e.which === 17 && !ctrlKey) { // Ctrl нажат: включаем масштабирование мышью
+                            ctrlKey = true;
+                            myMap.behaviors.enable('scrollZoom');
+                        }
+                    });
+                    $(document).keyup(function(e) { // Ctrl не нажат: выключаем масштабирование мышью
+                        if (e.which === 17) {
+                            ctrlKey = false;
+                            myMap.behaviors.disable('scrollZoom');
+                        }
+                    });
+                    }
+                </script>
                 <div class="contact__map__block">
                     <div class="contact__map__1">Центральный офис</div>
                     <div class="contact__map__2">ООО «ТрансРесурс»</div>
@@ -306,7 +389,7 @@
                                     <button class="red-btn" data-fancybox="" data-src="#modal-vopros" data-modal="true">Задать вопрос</button>
                                 </div>
                                 <div class="contact-town__map">
-                                    <iframe src="https://yandex.ru/map-widget/v1/-/CCUE6YhJDC" width="100" height="100" frameborder="1" allowfullscreen="true" ></iframe>
+                                    <div id="addressMap1"></div>
                                 </div>
                             </div>
                         </div>
@@ -323,7 +406,7 @@
                                     <button class="red-btn" data-fancybox="" data-src="#modal-vopros" data-modal="true">Задать вопрос</button>
                                 </div>
                                 <div class="contact-town__map">
-                                    <iframe src="https://yandex.ru/map-widget/v1/-/CCUE6YhJDC" width="100" height="100" frameborder="1" allowfullscreen="true" ></iframe>
+                                    <div id="addressMap2"></div>
                                 </div>
                             </div>
                         </div>
@@ -340,7 +423,7 @@
                                     <button class="red-btn" data-fancybox="" data-src="#modal-vopros" data-modal="true">Задать вопрос</button>
                                 </div>
                                 <div class="contact-town__map">
-                                    <iframe src="https://yandex.ru/map-widget/v1/-/CCUE6YhJDC" width="100" height="100" frameborder="1" allowfullscreen="true" ></iframe>
+                                    <div id="addressMap3"></div>
                                 </div>
                             </div>
                         </div>
@@ -357,7 +440,7 @@
                                     <button class="red-btn" data-fancybox="" data-src="#modal-vopros" data-modal="true">Задать вопрос</button>
                                 </div>
                                 <div class="contact-town__map">
-                                    <iframe src="https://yandex.ru/map-widget/v1/-/CCUE6YhJDC" width="100" height="100" frameborder="1" allowfullscreen="true" ></iframe>
+                                    <div id="addressMap4"></div>
                                 </div>
                             </div>
                         </div>
@@ -374,7 +457,7 @@
                                     <button class="red-btn" data-fancybox="" data-src="#modal-vopros" data-modal="true">Задать вопрос</button>
                                 </div>
                                 <div class="contact-town__map">
-                                    <iframe src="https://yandex.ru/map-widget/v1/-/CCUE6YhJDC" width="100" height="100" frameborder="1" allowfullscreen="true" ></iframe>
+                                    <div id="addressMap5"></div>
                                 </div>
                             </div>
                         </div>
@@ -391,7 +474,7 @@
                                     <button class="red-btn" data-fancybox="" data-src="#modal-vopros" data-modal="true">Задать вопрос</button>
                                 </div>
                                 <div class="contact-town__map">
-                                    <iframe src="https://yandex.ru/map-widget/v1/-/CCUE6YhJDC" width="100" height="100" frameborder="1" allowfullscreen="true" ></iframe>
+                                    <div id="addressMap6"></div>
                                 </div>
                             </div>
                         </div>
@@ -408,7 +491,7 @@
                                     <button class="red-btn" data-fancybox="" data-src="#modal-vopros" data-modal="true">Задать вопрос</button>
                                 </div>
                                 <div class="contact-town__map">
-                                    <iframe src="https://yandex.ru/map-widget/v1/-/CCUE6YhJDC" width="100" height="100" frameborder="1" allowfullscreen="true" ></iframe>
+                                    <div id="addressMap7"></div>
                                 </div>
                             </div>
                         </div>
@@ -425,14 +508,158 @@
                                     <button class="red-btn" data-fancybox="" data-src="#modal-vopros" data-modal="true">Задать вопрос</button>
                                 </div>
                                 <div class="contact-town__map">
-                                    <iframe src="https://yandex.ru/map-widget/v1/-/CCUE6YhJDC" width="100" height="100" frameborder="1" allowfullscreen="true" ></iframe>
+                                    <div id="addressMap8"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <script>
+                $(document).ready(function(){
 
+                    /*Приходящие данные*/
+                    var maps =[
+                        {
+                            'id' : 1,
+                            'name' : 'addressMap1',
+                            'center' : [50.443705, 30.530946],
+                            'zoom' :  10,
+                            'controls' : ['smallMapDefaultSet'],
+                            'elemClicking' : 'address__list-item-name-title',
+                            'points' : [
+                                {
+                                    id: "235",
+                                    iconImageHref: "/img/contact/label.png",
+                                    iconLayout: "default#image",
+                                    iconImageSize: [49,64],
+                                    center: [50.426472, 30.563022],
+                                    name: "м. Старая Деревня",
+                                    address: "бул. Трудящихся, д.18, к.1",
+                                    phone: "+7 (812) 748-27-52",
+                                    timeWork: "9:00–22:00",
+                                    location: "https://company.yandex.ru/",
+                                    power: "Откр. 0,5 Тл и закр. 1,5 Тл"
+                                },
+                                
+                            ]
+                        },
+                        {
+                            'id' : 2,
+                            'name' : 'addressMap2',
+                            'center' : [50.443705, 30.530946],
+                            'zoom' :  10,
+                            'controls' : ['smallMapDefaultSet'],
+                            'elemClicking' : 'address__list-item-name-title',
+                            'points' : [
+                                {
+                                    id: "237",
+                                    iconImageHref: "/img/contact/label.png",
+                                    iconLayout: "default#image",
+                                    iconImageSize: [49,64],
+                                    center: [50.426472, 30.563022],
+                                    name: "м. Старая Деревня",
+                                    address: "бул. Трудящихся, д.18, к.1",
+                                    phone: "+7 (812) 748-27-52",
+                                    timeWork: "9:00–22:00",
+                                    location: "https://company.yandex.ru/",
+                                    power: "Откр. 0,5 Тл и закр. 1,5 Тл"
+                                },
+                                {
+                                    id: "238",
+                                    iconImageHref: "/img/contact/label.png",
+                                    iconLayout: "default#image",
+                                    iconImageSize: [49,64],
+                                    center: [55.751574, 37.573856],
+                                    name: "м. Старая Деревня2",
+                                    address: "бул. Трудящихся, д.18, к.1",
+                                    phone: "+7 (815) 748-27-52",
+                                    timeWork: "9:00–20:00",
+                                    location: "https://company.yandex.ru/",
+                                    power: "Откр. 0,5 Тл и закр. 1,5 Тл"
+                                }
+                            ]
+                        }
+                    ] ;
+
+                    var myMap=[];
+                    var myMapWrap = [];
+                    var placemarks =[];
+
+                    /*Иницилизируем карты*/
+                    ymaps.ready(init);
+
+                    function init() {
+
+                        for (var elem = 0, length = maps.length; elem < length; elem++) {
+
+                            var points = maps[elem].points;
+
+                            var collection = new ymaps.GeoObjectCollection();
+
+                            myMap[elem] = new ymaps.Map(maps[elem].name, {
+                                center: maps[elem].center,
+                                zoom: maps[elem].zoom,
+                                controls: maps[elem].controls
+                            });
+
+                            for (var i = 0, l = points.length; i < l; i++) {
+
+                                /*Добавляем на карту колекцию геообъектов*/
+                                myMap[elem].geoObjects.add(collection);
+
+                                //Создаем балун по данным points
+
+                                placemarks[points[i].id] = new ymaps.Placemark(
+                                    points[i].center,
+                                    {
+                                        balloonContent: [
+                                            '<address>',
+                                            '<strong>'+points[i].name+'</strong>',
+                                            '<br/>',
+                                            points[i].address,
+                                            '<br/>',
+                                            points[i].phone,
+                                            '<br/>',
+                                            points[i].timeWork,
+                                            '<br/>',
+                                            '<a href="'+points[i].timeWork+'">Схема проезда</a>',
+                                            '</address>'
+                                        ].join('')
+                                    },
+                                    {
+                                        iconLayout: 'default#image',
+                                        iconImageHref: points[i].iconImageHref,
+                                        iconImageSize: points[i].iconImageSize,
+                                        iconImageOffset: points[i].iconImageOffset
+                                    }
+                                );
+
+                                /*Добавляем в колекцию наши балуны*/
+                                collection.add(placemarks[points[i].id]);
+                            }
+
+                            myMapWrap[elem]=myMap[elem];
+                            myMapWrap[elem].setBounds(myMapWrap[elem].geoObjects.getBounds());
+                        }
+                    }
+
+                    $('.'+maps[0].elemClicking).click(function(){
+                        var id = $(this).attr('balloon-id');
+                        mapId = $(this).attr('map-id');
+
+                        //Центруем карту
+                        myMapWrap[mapId].panTo(placemarks[id].geometry.getCoordinates());
+
+                        //Показываем балун как только отцентруется карта
+                        setTimeout(function () {
+                            placemarks[id].balloon.open();
+                        }, 800);
+                    });
+
+
+                    });
+            </script>
             <div class="container">
                 <div class="footer-form">
                     <a href="" class="footer-form__pdf" style="background-image: url(./img/contact/f-form.jpg);">
@@ -542,8 +769,8 @@
             </div>
         </div>
     </footer>
-    <script src="./libs/fancybox/fancybox.js?v=810c758db70e0f099e0f5f4e3965892f"></script>
-    <script src="./js/main.js?v=810c758db70e0f099e0f5f4e3965892f"></script>
+    <script src="./libs/fancybox/fancybox.js"></script>
+    <script src="./js/main.js"></script>
 
     <!-- модалки -->
     <form id="modal-back" class="my-modal" style="display: none;">

@@ -351,7 +351,7 @@ button:focus {
   position: relative;
   overflow: hidden; }
 
-#contact-map iframe {
+#contact-map #map {
   position: absolute;
   top: 0;
   right: 0;
@@ -527,7 +527,7 @@ button:focus {
   overflow: hidden;
   height: 100%;
   width: 50%; }
-  .contact-town__map iframe {
+  .contact-town__map div {
     height: 100%;
     top: 0;
     position: absolute;
