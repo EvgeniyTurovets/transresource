@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Трансресурс</title>
-    <link rel="stylesheet" href="./css/style.css?v=bfa7e540aaa2beb7f45c72ab7cf5b2f5">
-    <link rel="stylesheet" href="./libs/fancybox/fancybox.min.css?v=bfa7e540aaa2beb7f45c72ab7cf5b2f5">
-    <link rel="stylesheet" href="./css/page.css?v=bfa7e540aaa2beb7f45c72ab7cf5b2f5">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?v=bfa7e540aaa2beb7f45c72ab7cf5b2f5"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./libs/fancybox/fancybox.min.css">
+    <link rel="stylesheet" href="./css/page.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- api яндекса -->
-    <script type="text/javascript" src="https://api-maps.yandex.ru/2.1-dev/?lang=ru_RU&v=bfa7e540aaa2beb7f45c72ab7cf5b2f5"></script>
+    <script type="text/javascript" src="https://api-maps.yandex.ru/2.1-dev/?lang=ru_RU"></script>
 
 </head>
 <body>
@@ -547,7 +547,7 @@
                             iconImageOffset: [-5, -38]
                         });
 
-                        
+                        myMap2.behaviors.disable('scrollZoom');
 
                         myMap2.geoObjects
                         .add(myPlacemark)
@@ -580,7 +580,7 @@
                             // её "ножки" (точки привязки).
                             iconImageOffset: [-5, -38]
                         });
-
+                        myMap3.behaviors.disable('scrollZoom');
                         myMap3.geoObjects
                         .add(myPlacemark2)
                     };
@@ -695,8 +695,8 @@
             </div>
         </div>
     </footer>
-    <script src="./libs/fancybox/fancybox.js?v=bfa7e540aaa2beb7f45c72ab7cf5b2f5"></script>
-    <script src="./js/main.js?v=bfa7e540aaa2beb7f45c72ab7cf5b2f5"></script>
+    <script src="./libs/fancybox/fancybox.js"></script>
+    <script src="./js/main.js"></script>
 
     <!-- модалки -->
     <form id="modal-back" class="my-modal" style="display: none;">
